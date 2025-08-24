@@ -137,13 +137,13 @@ class Simulation:
 
         self.board._board = temp_board._board
 
-def main(board_size: int, periods: int, random_pop_density: float):
+def main(board_size: int, freq: float, periods: int, random_pop_density: float, pattern: str = 'random'):
     sim = Simulation(board_size)
     sim.init_random_board(random_pop_density)
     for _ in range(periods):
         sim.run_step()
-        # sim.board.print_board()
-        # sleep(.1)
+        sim.board.print_board()
+        sleep(freq)
 
 if __name__ == "__main__":
 
